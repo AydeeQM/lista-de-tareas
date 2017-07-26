@@ -82,6 +82,11 @@ function addTarea (){
         tarea = document.getElementById('tarea').value = "";
     }  
 }
+table1.addEventListener('click', function(event){
+    if(event.target.nodeName=='TD'){
+        event.target.classList.toggle('completeTask');
+    }
+}, false);
 
 table1.addEventListener("click", function(event) {
 	if (event.target && event.target.className == "deleteTask") {
