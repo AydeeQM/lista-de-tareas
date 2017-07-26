@@ -48,7 +48,7 @@ div.setAttribute('align','center');
 var table1 = document.createElement('table');
 table1.border = "1";
 table1.setAttribute('bordercolor','red');
-table1.setAttribute('width','34%');
+table1.setAttribute('width','35%');
 
 for(var i = 0; i<listaTarea.length; i++){
     var trx = document.createElement('tr');
