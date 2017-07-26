@@ -56,6 +56,7 @@ for(var i = 0; i<listaTarea.length; i++){
     var trx = document.createElement('tr');
     for(var j = 0; j<columna.length; j++){
         var tdx = document.createElement('td');
+        tdx.setAttribute('contenteditable','true');
         tdx.innerHTML = listaTarea[i].title;
         trx.appendChild(tdx);
     }
@@ -87,6 +88,7 @@ function addTarea (){
             var trx = document.createElement('tr');
             for(var j = 0; j<columna.length; j++){
                 var tdx = document.createElement('td');
+                tdx.setAttribute('contenteditable','true');
                 tdx.innerHTML = listaTarea[i].title;
             }
             table1.appendChild(trx);
