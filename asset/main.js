@@ -39,10 +39,16 @@ var columna =[''];
 
 var body = document.body;
 var h1 = document.createElement('h1');
+h1.setAttribute('align','center');
 h1.innerHTML = "LISTA DE TAREAS";
+
+var div = document.createElement('div');
+div.setAttribute('align','center');
 
 var table1 = document.createElement('table');
 table1.border = "1";
+table1.setAttribute('bordercolor','red');
+table1.setAttribute('width','34%');
 
 for(var i = 0; i<listaTarea.length; i++){
     var trx = document.createElement('tr');
@@ -61,7 +67,8 @@ for(var i = 0; i<listaTarea.length; i++){
 }
 
 body.appendChild(h1);
-body.appendChild(table1);
+body.appendChild(div);
+div.appendChild(table1);
 
 function addTarea (){
     var tarea = document.getElementById("tarea");
