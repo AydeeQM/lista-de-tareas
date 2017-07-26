@@ -80,7 +80,7 @@ function addTarea (){
     listaTarea.push(datos);
     
     if(tarea === ''){
-        alert("Usted deberia de escribir una tarea");
+        alert("Usted deberia de escribir una tarea...");
     }else{
             
         for(var i = listaTarea.length - 1; i<listaTarea.length; i++){
