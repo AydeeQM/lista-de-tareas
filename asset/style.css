@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+table tr td.completeTask {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+table tr td.completeTask::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 7px;
+    width: 3px;
+}
