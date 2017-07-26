@@ -37,7 +37,7 @@ function toDoList (title){
 
 var columna =[''];//array con un elemento para dibujar la columna
 
-//generando html desde ja
+//generando estilos de html desde ja
 var body = document.body;
 var h1 = document.createElement('h1');
 h1.setAttribute('align','center');
