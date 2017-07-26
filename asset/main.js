@@ -72,7 +72,10 @@ function addTarea (){
         table1.appendChild(trx);
         trx.appendChild(tdx);
         
+        var closeX = document.createElement("BUTTON");
+        closeX.setAttribute('class','deleteTask');
+        closeX.innerHTML = "X";
+        
         tarea = document.getElementById('tarea').value = "";
-
     }  
 }
