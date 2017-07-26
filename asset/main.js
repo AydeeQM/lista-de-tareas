@@ -52,6 +52,12 @@ for(var i = 0; i<listaTarea.length; i++){
         trx.appendChild(tdx);
     }
     table1.appendChild(trx);
+    var closeX = document.createElement("BUTTON");
+    closeX.setAttribute('class','deleteTask');
+    closeX.innerHTML = "X";
+
+    trx.appendChild(closeX);
+    table1.appendChild(trx);
 }
 
 body.appendChild(h1);
