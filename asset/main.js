@@ -62,15 +62,21 @@ function addTarea (){
     tarea = tarea.value;
     var datos = new toDoList(tarea);
     listaTarea.push(datos);
+    
+    if(tarea === ''){
+        alert("Usted deberia de escribir una tarea");
+    }else{
             
-    for(var i = listaTarea.length - 1; i<listaTarea.length; i++){
-        var trx = document.createElement('tr');
-        for(var j = 0; j<columna.length; j++){
-            var tdx = document.createElement('td');
-            tdx.innerHTML = listaTarea[i].title;
+        for(var i = listaTarea.length - 1; i<listaTarea.length; i++){
+            var trx = document.createElement('tr');
+            for(var j = 0; j<columna.length; j++){
+                var tdx = document.createElement('td');
+                tdx.innerHTML = listaTarea[i].title;
+            }
+            table1.appendChild(trx);
+            trx.appendChild(tdx);
+
         }
-        table1.appendChild(trx);
-        trx.appendChild(tdx);
         
         var closeX = document.createElement("BUTTON");
         closeX.setAttribute('class','deleteTask');
@@ -80,8 +86,10 @@ function addTarea (){
         table1.appendChild(trx);
         
         tarea = document.getElementById('tarea').value = "";
-    }  
+    }
+ 
 }
+
 table1.addEventListener('click', function(event){
     if(event.target.nodeName=='TD'){
         event.target.classList.toggle('completeTask');
