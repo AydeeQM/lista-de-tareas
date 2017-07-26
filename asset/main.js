@@ -101,19 +101,19 @@ function addTarea (){
         trx.appendChild(closeX);
         table1.appendChild(trx);
         
-        tarea = document.getElementById('tarea').value = "";
+        tarea = document.getElementById('tarea').value = ""; //para limpiar despues del imput
     }
  
 }
 
-//verifica para tachar
+//generar evento para tachar
 table1.addEventListener('click', function(event){
     if(event.target.nodeName=='TD'){
         event.target.classList.toggle('completeTask');
     }
 }, false);
 
-//verifica para ocultar
+//generar evento para ocultar
 table1.addEventListener("click", function(event) {
 	if (event.target && event.target.className == "deleteTask") {
     event.target.parentNode.remove();
