@@ -35,8 +35,9 @@ function toDoList (title){
     this.title = title;
 };
 
-var columna =[''];
+var columna =[''];//array con un elemento para dibujar la columna
 
+//generando html desde ja
 var body = document.body;
 var h1 = document.createElement('h1');
 h1.setAttribute('align','center');
@@ -50,6 +51,7 @@ table1.border = "1";
 table1.setAttribute('bordercolor','red');
 table1.setAttribute('width','35%');
 
+//for que recorre e imprime los primeros 10 arrays
 for(var i = 0; i<listaTarea.length; i++){
     var trx = document.createElement('tr');
     for(var j = 0; j<columna.length; j++){
@@ -70,6 +72,7 @@ body.appendChild(h1);
 body.appendChild(div);
 div.appendChild(table1);
 
+//funcion que genera tabla y tambien agrega texto
 function addTarea (){
     var tarea = document.getElementById("tarea");
     tarea = tarea.value;
@@ -103,12 +106,14 @@ function addTarea (){
  
 }
 
+//verifica para tachar
 table1.addEventListener('click', function(event){
     if(event.target.nodeName=='TD'){
         event.target.classList.toggle('completeTask');
     }
 }, false);
 
+//verifica para ocultar
 table1.addEventListener("click", function(event) {
 	if (event.target && event.target.className == "deleteTask") {
     event.target.parentNode.remove();
