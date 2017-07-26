@@ -71,6 +71,8 @@ function addTarea (){
         }
         table1.appendChild(trx);
         trx.appendChild(tdx);
+        
+        tarea = document.getElementById('tarea').value = "";
 
     }  
 }
