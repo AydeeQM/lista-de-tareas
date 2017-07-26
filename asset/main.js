@@ -56,3 +56,21 @@ for(var i = 0; i<listaTarea.length; i++){
 
 body.appendChild(h1);
 body.appendChild(table1);
+
+function addTarea (){
+    var tarea = document.getElementById("tarea");
+    tarea = tarea.value;
+    var datos = new toDoList(tarea);
+    listaTarea.push(datos);
+            
+    for(var i = listaTarea.length - 1; i<listaTarea.length; i++){
+        var trx = document.createElement('tr');
+        for(var j = 0; j<columna.length; j++){
+            var tdx = document.createElement('td');
+            tdx.innerHTML = listaTarea[i].title;
+        }
+        table1.appendChild(trx);
+        trx.appendChild(tdx);
+
+    }  
+}
