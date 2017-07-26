@@ -76,6 +76,9 @@ function addTarea (){
         closeX.setAttribute('class','deleteTask');
         closeX.innerHTML = "X";
         
+        trx.appendChild(closeX);
+        table1.appendChild(trx);
+        
         tarea = document.getElementById('tarea').value = "";
     }  
 }
