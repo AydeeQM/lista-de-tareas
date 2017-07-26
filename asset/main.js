@@ -88,7 +88,7 @@ function addTarea (){
             var trx = document.createElement('tr');
             for(var j = 0; j<columna.length; j++){
                 var tdx = document.createElement('td');
-                tdx.setAttribute('contenteditable','true');
+                tdx.setAttribute('contenteditable','true');//etiqueta para editar texto
                 tdx.innerHTML = listaTarea[i].title;
             }
             table1.appendChild(trx);
