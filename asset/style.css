@@ -37,13 +37,13 @@ table tr td:hover {
     background: salmon;
 }
 
-table tr td.completeTask {
+table tr td.completado {
     background: #888;
     color: #fff;
     text-decoration: line-through;
 }
 
-table tr td.completeTask::before {
+table tr td.completado::before {
     content: '';
     position: absolute;
     border-color: #fff;
