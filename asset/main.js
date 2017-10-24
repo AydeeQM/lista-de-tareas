@@ -37,11 +37,8 @@ function toDoList (title){
 
 var columna =[''];//array con un elemento para dibujar la columna
 
-//generando estilos de html desde ja
+//generando estilos de html desde javascript
 var body = document.body;
-var h1 = document.createElement('h1');
-h1.setAttribute('align','center');
-h1.innerHTML = "LISTA DE TAREAS";
 
 var div = document.createElement('div');
 div.setAttribute('align','center');
@@ -57,24 +54,25 @@ for(var i = 0; i<listaTarea.length; i++){
     for(var j = 0; j<columna.length; j++){
         var tdx = document.createElement('td');
         tdx.setAttribute('contenteditable','true');
+        tdx.setAttribute('width','100%');
         tdx.innerHTML = listaTarea[i].title;
         trx.appendChild(tdx);
     }
     table1.appendChild(trx);
     var closeX = document.createElement("BUTTON");
-    closeX.setAttribute('class','deleteTask');
+    closeX.setAttribute('class','delete');
     closeX.innerHTML = "X";
 
     trx.appendChild(closeX);
     table1.appendChild(trx);
 }
 
-body.appendChild(h1);
 body.appendChild(div);
 div.appendChild(table1);
 
 //funcion que genera tabla y tambien agrega texto
-function addTarea (){
+var addTarea = document.getElementById('agregar');
+addTarea.onclick = function(){
     var tarea = document.getElementById("tarea");
     tarea = tarea.value;
     var datos = new toDoList(tarea);
@@ -89,15 +87,17 @@ function addTarea (){
             for(var j = 0; j<columna.length; j++){
                 var tdx = document.createElement('td');
                 tdx.setAttribute('contenteditable','true');//etiqueta para editar texto
-                tdx.innerHTML = listaTarea[i].title;
+                tdx.setAttribute('width','100%');
+                tdx.innerHTML = listaTarea[i].title;                
+                
             }
             table1.appendChild(trx);
-            trx.appendChild(tdx);
+            trx.appendChild(tdx);           
 
         }
         
         var closeX = document.createElement("BUTTON");
-        closeX.setAttribute('class','deleteTask');
+        closeX.setAttribute('class','delete');
         closeX.innerHTML = "X";
         
         trx.appendChild(closeX);
@@ -109,17 +109,18 @@ function addTarea (){
 }
 
 //generar evento para tachar
-table1.addEventListener('click', function(event){
+table1.addEventListener('dblclick', function(event){
     if(event.target.nodeName=='TD'){
-        event.target.classList.toggle('completeTask');
+        event.target.classList.toggle('completado');
     }
 }, false);
 
 //generar evento para ocultar
 table1.addEventListener("click", function(event) {
-	if (event.target && event.target.className == "deleteTask") {
+	if (event.target && event.target.className == "delete") {
     event.target.parentNode.remove();
   }
 });
+
 
 
